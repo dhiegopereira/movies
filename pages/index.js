@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/Home.module.css'
 import moment from 'moment'
+import Head from 'next/head'
 
 export default function Home() {
 	const [form, setForm ] = useState({
@@ -84,30 +85,33 @@ export default function Home() {
 	
 
 	return (
-		<div className={styles.col_12, styles.container}>
-			<div className={styles.header}>	
-				Movies			
-       		</div>
-			<div className={styles.search}>		
-       		 	<input className={styles.input_search} type='text' placeholder='Pesquisar pelo nome do filme' onChange={onChange} name='search' value={form.search} onKeyPress={search}/>
-			</div>
-			{ load && <p> Carregando... </p>}
-			<div>
-			{ result.length > 0 && pagination()}
-			{ result.length > 0 && buttonPage()}
-			{ detail &&
-				<div>
-					<div>Titulo</div>
-					<div>Sinopse</div>
-					<div><img src="" /></div>
-					<div>Informações</div>
-					<div>Generos</div>
-					<div>Vídeo</div>
-					<button onClick={closeDetails}>Fechar</button>
+		<React.Fragment>
+			<Head><title>The - Movies</title></Head>
+			<div className={styles.col_12, styles.container}>
+				<div className={styles.header}>	
+					Movies			
 				</div>
-			}
-			
+				<div className={styles.search}>		
+					<input className={styles.input_search} type='text' placeholder='Pesquisar pelo nome do filme' onChange={onChange} name='search' value={form.search} onKeyPress={search}/>
+				</div>
+				{ load && <p> Carregando... </p>}
+				<div>
+				{ result.length > 0 && pagination()}
+				{ result.length > 0 && buttonPage()}
+				{ detail &&
+					<div>
+						<div>Titulo</div>
+						<div>Sinopse</div>
+						<div><img src="" /></div>
+						<div>Informações</div>
+						<div>Generos</div>
+						<div>Vídeo</div>
+						<button onClick={closeDetails}>Fechar</button>
+					</div>
+				}
+				
+				</div>
 			</div>
-		</div>
+		</React.Fragment>
 	);
 }
