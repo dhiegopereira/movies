@@ -91,7 +91,7 @@ export default function Home() {
 			<div className={styles.search}>		
        		 	<input className={styles.input_search} type='text' placeholder='Pesquisar pelo nome do filme' onChange={onChange} name='search' value={form.search} onKeyPress={search}/>
 			</div>
-			{ load && <img src='./public/img/loading.gif' />}
+			{ load && <p> Carregando... </p>}
 			<div>
 			{ result.length > 0 && pagination()}
 			{ result.length > 0 && buttonPage()}

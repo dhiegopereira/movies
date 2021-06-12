@@ -20,7 +20,7 @@ npm run dev
 URL para acessar o projeto: http://localhost:3000
 
 ## Aplicação em produção no Vercel
-* [Movies](https://palpite-box-scio.vercel.app/)
+* [Movies](https://movies-cubos.vercel.app/)
 
 ## Aplicação desenvolvida com as seguintes tecnologias
 * [React](https://reactjs.org/)
