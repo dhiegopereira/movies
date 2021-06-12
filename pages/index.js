@@ -33,20 +33,20 @@ export default function Home() {
 
 	const card = (movies) => {
 		const list = movies.map((movie) =>			
-			<div key={movie.id} className={styles.item}>	
-				<div className={styles.aside_left}>			
-					<img src={`https://image.tmdb.org/t/p/w500`+movie.poster_path} width="100%"  />		
+			<div key={movie.id} className={styles.row}>	
+				<div className={styles.col_3}>			
+					<img className={styles.col_12} src={`https://image.tmdb.org/t/p/w500`+movie.poster_path} />		
 				</div>	
 
-				<div className={styles.aside_right}>
-					<div className={styles.title_bkg}><div className={styles.title}>{movie.original_title}</div></div>
+				<div className={styles.col_9}>
+					<div className={styles.title}>{movie.original_title}</div>
 					<div className={styles.date}>{ moment(movie.release_date).format('DD/MM/YYYY')}</div>			
 					<div className={styles.description}>{movie.overview}</div>			
 					<div className={styles.genre}>{movie.details.genres.map(el => <div className={styles.item_genre}>  {el.name} </div>)}</div>								
 				</div>
 			</div>
 		)
-		return (<section>{list}</section>)
+		return (<>{list}</>)
 	}
 
 	const pagination = () => {
@@ -68,9 +68,9 @@ export default function Home() {
 		const size = result.length/3
 		const list = []
 		for(let i = 1; i <= size; i++) {
-			list.push(<div className={styles.button_page} key={i} onClick={changePage}>{i}</div>)			
+			list.push(<div className={styles.item_page} key={i} onClick={changePage}>{i}</div>)			
 		}		
-		return (<div className={styles.pagination}>{list}</div>)
+		return (<div className={styles.item}>{list}</div>)
 	}
 
 	const openDetails = evt => {
@@ -86,13 +86,16 @@ export default function Home() {
 
 	return (
 		<React.Fragment>
-			<Head><title>The - Movies</title></Head>
-			<div className={styles.col_12, styles.container}>
+			<Head>
+				<title>The - Movies</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+			</Head>
+			<div className={styles.container}>
 				<div className={styles.header}>	
 					Movies			
 				</div>
 				<div className={styles.search}>		
-					<input className={styles.input_search} type='text' placeholder='Pesquisar pelo nome do filme' onChange={onChange} name='search' value={form.search} onKeyPress={search}/>
+					<input  className={styles.input_search} type='text' placeholder='Pesquisar pelo nome do filme' onChange={onChange} name='search' value={form.search} onKeyPress={search}/>
 				</div>
 				{ load && <p> Carregando... </p>}
 				<div>
