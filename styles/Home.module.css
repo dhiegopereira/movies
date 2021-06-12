@@ -1,0 +1,132 @@
+.container {
+  font-family: "Lucida Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  background-color: #000294b9;
+  color: #ffffff;
+  padding: 20px;
+  font-size: calc(0.2em + 1vw);
+  text-align: center;
+  font-weight: bold;
+}
+
+.search {
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+.input_search {
+  font-size: calc(0.2em + 1vw);
+  padding: 10px;
+  width: 500px;
+  border-radius: 20px;
+}
+
+.item {
+  border: 5px;
+  background-color:#D3D3D3;
+  margin-top: 20px;
+}
+
+.aside_left {
+  width: 20%;
+  display: inline-block;
+}
+.aside_right {
+  width: 80%;
+  margin:0;
+  display: inline-block;
+  float: right;
+}
+
+.title_bkg {
+  background-color: #000294b9;
+  padding: 10px;
+}
+
+.title {
+  color: #00FFFF;
+  margin-left: 20px;
+  display: block;
+  font-size: calc(0.2em + 1vw);
+}
+
+.date {
+  margin-top: 20px;
+  margin-left: 20px;
+  color: #808080;
+  font-size: calc(0.2em + 1vw);
+}
+
+.description {
+  color: #4F4F4F;
+  font-size: calc(0.2em + 1vw);
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.genre {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: calc(0.2em + 1vw);
+}
+
+.item_genre {
+  text-align: center;
+  display: inline;
+  margin: 5px;
+  border: 2px solid #000294b9;
+  padding: 10px;
+  border-radius: 20px;
+  color: #000294b9;
+}
+
+.pagination {
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+.button_page {
+  text-align: center;
+  cursor: pointer;
+  display: inline;
+  margin: 5px;
+  border: 2px solid #000294b9;
+  padding: 9.5px 15px 9.5px 15px;
+  border-radius: 45%;
+}
+
+.button_page:hover{
+  background-color: #000294b9;
+  color: white;
+}
+
+
+
+/* For desktop: */
+.col_1 {width: 8.33%;}
+.col_2 {width: 16.66%;}
+.col_3 {width: 25%;}
+.col_4 {width: 33.33%;}
+.col_5 {width: 41.66%;}
+.col_6 {width: 50%;}
+.col_7 {width: 58.33%;}
+.col_8 {width: 66.66%;}
+.col_9 {width: 75%;}
+.col_10 {width: 83.33%;}
+.col_11 {width: 91.66%;}
+.col_12 {width: 100%;}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
